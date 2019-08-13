@@ -25,7 +25,8 @@ Class
     Foam::RASModels::LaunderSharmaKEYap
 
 Description
-    Launder and Sharma low-Reynolds k-epsilon turbulence model for
+    The Yap correction is added to the Launder and Sharma 
+    low-Reynolds k-epsilon turbulence model for
     incompressible and compressible and combusting flows including
     rapid distortion theory (RDT) based compression term.
 
@@ -40,6 +41,11 @@ Description
         El Tahry, S. H. (1983).
         k-epsilon equation for compressible reciprocating engine flows.
         Journal of Energy, 7(4), 345-353.
+        
+        For the Yap correction:
+        Yap, C. J. (1987), Turbulent Heat and Momentum 
+        Transfer in Recirculating and Impinging Flows, 
+        PhD Thesis, Faculty of Technology, University of Manchester, United Kingdom.
     \endverbatim
 
     The default model coefficients are
@@ -53,6 +59,8 @@ Description
             alphah      1.0;    // only for compressible
             alphahk     1.0;    // only for compressible
             alphaEps    0.76923;
+            Cyap        0.83;
+            kappa       0.41; //this is the von Karman constant
         }
     \endverbatim
 
